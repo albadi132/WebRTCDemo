@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">مشروع محاكاة الاتصال الجماعي باستخدام تقنية</h2>
+    <h2 class="text-center">WebRTC + signalR</h2>
+    <p class="text-center">
+   تم تطويره بواسطة سالم البادي
+    </p>
+    <!-- Video elements container -->
+    <div id="videos" class="row justify-content-center">
+        <div class="col-md-4 mb-3">
+            <video class="video-player" id="user-1" autoplay playsinline></video>
+        </div>
+        <!-- Additional video elements (user-2, user-3, user-4) will be dynamically added via JavaScript -->
+    </div>
+
+    <!-- Share screen button -->
+    <div class="text-center mt-4">
+        <button id="shareScreenButton" onclick="shareScreen()" class="btn btn-primary btn-lg">مشاركة الشاشة</button>
+    </div>
+
+    <!-- Messages list -->
+    <div class="row text-start">
+    <h4>debugger log</h4>
+    <ul id="messagesList"></ul>
+    </div>
+</div>
+
+@section Stylesheet {
+  
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .video-player {
+            width: 100%;
+            height: 220px;
+            background-color: #000;
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #videos {
+            display: flex;
+            gap: 15px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+    </style>
+}
+
+@section Scripts {
+    <script src="~/js/signalr/signalr.min.js" defer></script>
+    <script src="~/js/albadi.js" defer></script>
+}
